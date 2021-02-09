@@ -344,6 +344,7 @@ class Tasks extends BaseTasks
     {
         foreach ($urls as $key => $url) {
             $urlBase = current(explode('?', $url, 2));
+            $urlBase = current(explode('#', $urlBase, 2));
             // Remove any URLs which differ only by query string
             // by setting URL base as key and assign actual URL as value
             $urls[$urlBase] = $url;
